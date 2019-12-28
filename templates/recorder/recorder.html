@@ -1,0 +1,110 @@
+<link rel="shortcut icon" href="/static/image/QICON.ico" type="image/x-icon" /> 
+
+<link rel="stylesheet" href="/static/jquery-bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="/static/jquery-bootstrap/bootstrap3.css">
+<script src="/static/jquery-bootstrap/jquery.min.js"></script>
+<script src="/static/jquery-bootstrap/popper.js"></script>
+<script src="/static/jquery-bootstrap/bootstrap.min.js"></script>
+<script src="/static/jquery-bootstrap/bootstrap3.js"></script>
+<script src="/static/jquery-bootstrap/notify.js"></script>
+<script src="/static/jquery-bootstrap/notify.min.js"></script>
+
+<link rel="stylesheet" type="text/css"  href="/static/recorder/recorder.css" >
+<script src="/static/jquery-bootstrap/less.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+
+    <title>
+      Q-Recorder
+    </title>
+    <body>
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><i class='fa fa-sort-up' style='font-size:40px'></i></button>
+        <iframe id="my_iframe" style="display:none;"></iframe>
+<div id="navbar">
+        <span class="brand" style="color:white; margin:20px;"> <i>Q-Recorder</i>  </span>
+        
+        <div style=" display: flex; float: right;flex-direction: row;">
+         
+                <div id="timer">00:00</div><br>
+                <div style="margin:16px;">
+             <a href="#" id="start" >  <img src="/static/image/record.png"  width="50" height="50">
+             </a>
+             
+                
+              
+      <a id="stop" href="#"><img src="/static/image/stop.png"  width="50" height="50"></a></div></div>
+      </div>
+      <br><br><br><br><br>
+      <div class="icon-bar">
+
+          <a href="#" class="google" onclick='EraseRec();'><i class="fa fa-eraser"></i></a> 
+          <a href="#" class="facebook" onclick='downloadCSVRec({ filename: "Recorded.csv" });'><i class="fa fa-file-excel-o"></i></a> 
+        
+        
+      </div>
+      <div class="content">
+          <div style="margin:5px;font-size: 20px; text-align: center;"> <input name="url" type="text" id="url" value="file:///F:/MyApp/Q-DOCT/form_test.html" placeholder="Enter a valid URL"  width="10" height="10" onkeydown="myFunction_URL()"/> <button class="btn btn-primary" type="button" onclick="Launch()">Launch</button>
+      
+          </div>
+      <table id="myTable" class="table-fill">
+            <thead>
+            <tr>
+            <th class="text-left">Event</th>
+            <th class="text-left">Locator</th>
+            </tr>
+            </thead>
+            <tbody id="tablebody" class="table-hover">
+            <tr>
+            <td class="text-left">Launch Browser</td>
+            <td class="text-left">--</td>
+            </tr>
+            <tr>
+            <td class="text-left">Go To URL</td>
+            <td id="GOURL" class="text-left">--</td>
+            </tr>
+            
+            </tbody>
+            </table>
+
+        </div>
+
+
+
+
+         <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Training Data!!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <p>You can save it as training data for further usage. Which can benifit you for auto healing of expired locators and better maintanance of flaky tests. </p>
+
+          <input type="text" name="train" placeholder="Give a name">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" onclick="Training_Data_Save()">Save</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+        </body>
+</html>
+
+
+
+
+<script type="text/javascript" src="/static/recorder/recorder.js"></script>
